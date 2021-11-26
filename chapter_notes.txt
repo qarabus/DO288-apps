@@ -1,0 +1,312 @@
+[student@workstation ~]$ ls
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+[student@workstation ~]$ 
+[student@workstation ~]$ pwd
+/home/student
+[student@workstation ~]$ ls -lrt
+total 0
+drwxr-xr-x. 2 student student 6 Nov 25 01:45 Videos
+drwxr-xr-x. 2 student student 6 Nov 25 01:45 Templates
+drwxr-xr-x. 2 student student 6 Nov 25 01:45 Public
+drwxr-xr-x. 2 student student 6 Nov 25 01:45 Pictures
+drwxr-xr-x. 2 student student 6 Nov 25 01:45 Music
+drwxr-xr-x. 2 student student 6 Nov 25 01:45 Downloads
+drwxr-xr-x. 2 student student 6 Nov 25 01:45 Documents
+drwxr-xr-x. 2 student student 6 Nov 25 01:45 Desktop
+[student@workstation ~]$ who am i
+[student@workstation ~]$ who
+student  :1           2021-11-25 01:44 (:1)
+[student@workstation ~]$ oc get nodes
+error: Missing or incomplete configuration info.  Please point to an existing, complete config file:
+
+
+  1. Via the command-line flag --kubeconfig
+  2. Via the KUBECONFIG environment variable
+  3. In your home directory as ~/.kube/config
+
+To view or setup config directly use the 'config' command.
+[student@workstation ~]$ cat /usr/local/etc/ocp4.defaults 
+RHT_OCP4_MODE=development
+RHT_OCP4_MASTER_API=
+RHT_OCP4_WILDCARD_DOMAIN=
+RHT_OCP4_NEXUS_SERVER=
+RHT_OCP4_CLUSTER_ID=
+RHT_OCP4_DEV_USER=
+RHT_OCP4_DEV_PASSWORD=
+RHT_OCP4_GITHUB_USER=
+RHT_OCP4_QUAY_USER=
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ # github account 
+[student@workstation ~]$ # quay.io account 
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ lab docker-build start
+
+Checking prerequisites for GE: Deploying an Application to an OpenShift Cluster
+
+ Checking local clone of the applications repository:
+ · Folder '/home/student/DO288-apps' is a git repo.............  FAIL
+
+You do not seem to have a local clone of the applications repository.
+Perform the first guided exercise: "Configuring Your Classroom Environment" before starting this exercise.
+
+Cannot continue due to the previous errors.....................  FAIL
+
+[student@workstation ~]$ vim token 
+[student@workstation ~]$ cat token 
+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
+[student@workstation ~]$ git clone https://github.com/qarabus/DO288-apps.git
+Cloning into 'DO288-apps'...
+remote: Enumerating objects: 1124, done.
+Receiving objects:  26% (293/1124)
+Receiving objects:  34% (383/1124)
+remote: Total 1124 (delta 0), reused 0 (delta 0), pack-reused 1124
+Receiving objects: 100% (1124/1124), 1.05 MiB | 5.62 MiB/s, done.
+Resolving deltas: 100% (266/266), done.
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ ls -lrt
+total 8
+drwxr-xr-x.  2 student student    6 Nov 25 01:45 Videos
+drwxr-xr-x.  2 student student    6 Nov 25 01:45 Templates
+drwxr-xr-x.  2 student student    6 Nov 25 01:45 Public
+drwxr-xr-x.  2 student student    6 Nov 25 01:45 Pictures
+drwxr-xr-x.  2 student student    6 Nov 25 01:45 Music
+drwxr-xr-x.  2 student student    6 Nov 25 01:45 Downloads
+drwxr-xr-x.  2 student student    6 Nov 25 01:45 Documents
+drwxr-xr-x.  2 student student    6 Nov 25 01:45 Desktop
+-rw-rw-r--.  1 student student   41 Nov 26 01:01 token
+drwxrwxr-x. 35 student student 4096 Nov 26 01:03 DO288-apps
+[student@workstation ~]$ cd D0288-apps
+bash: cd: D0288-apps: No such file or directory
+[student@workstation ~]$ cd DO288-apps
+[student@workstation DO288-apps]$ ls -lrt
+total 16
+-rw-rw-r--. 1 student student   205 Nov 26 01:03 README.md
+-rw-rw-r--. 1 student student 11343 Nov 26 01:03 LICENSE
+drwxrwxr-x. 2 student student    57 Nov 26 01:03 app-config
+drwxrwxr-x. 2 student student    20 Nov 26 01:03 go-hello
+drwxrwxr-x. 3 student student    38 Nov 26 01:03 container-build
+drwxrwxr-x. 2 student student    40 Nov 26 01:03 build-app
+drwxrwxr-x. 9 student student   196 Nov 26 01:03 books
+drwxrwxr-x. 3 student student    32 Nov 26 01:03 java-serverhost
+drwxrwxr-x. 2 student student    24 Nov 26 01:03 html-helloworld
+drwxrwxr-x. 2 student student    63 Nov 26 01:03 hello-world-nginx
+drwxrwxr-x. 3 student student    60 Nov 26 01:03 hello-java
+drwxrwxr-x. 3 student student    71 Nov 26 01:03 micro-java
+drwxrwxr-x. 2 student student    40 Nov 26 01:03 nodejs-helloworld
+drwxrwxr-x. 2 student student    62 Nov 26 01:03 nexus3
+drwxrwxr-x. 3 student student    71 Nov 26 01:03 movies
+drwxrwxr-x. 3 student student    36 Nov 26 01:03 s2i-scripts
+drwxrwxr-x. 2 student student    38 Nov 26 01:03 quotes
+drwxrwxr-x. 3 student student    32 Nov 26 01:03 quip
+drwxrwxr-x. 2 student student    40 Nov 26 01:03 probes
+drwxrwxr-x. 2 student student    23 Nov 26 01:03 post-commit
+drwxrwxr-x. 2 student student    23 Nov 26 01:03 php-scale
+drwxrwxr-x. 2 student student    23 Nov 26 01:03 php-helloworld
+drwxrwxr-x. 2 student student    41 Nov 26 01:03 php-hello-dockerfile
+drwxrwxr-x. 3 student student    32 Nov 26 01:03 todo-api-micro
+drwxrwxr-x. 2 student student    25 Nov 26 01:03 simple-pipeline
+drwxrwxr-x. 3 student student    88 Nov 26 01:03 todo-api
+drwxrwxr-x. 3 student student   164 Nov 26 01:03 todo-backend
+drwxrwxr-x. 5 student student    85 Nov 26 01:03 todo-single
+drwxrwxr-x. 4 student student   195 Nov 26 01:03 todo-frontend
+drwxrwxr-x. 2 student student    24 Nov 26 01:03 ubi-sleep
+drwxrwxr-x. 2 student student    39 Nov 26 01:03 ubi-info
+drwxrwxr-x. 2 student student    24 Nov 26 01:03 ubi-echo
+drwxrwxr-x. 2 student student    23 Nov 26 01:03 trigger-builds
+drwxrwxr-x. 3 student student   115 Nov 26 01:03 todo-ssr
+[student@workstation DO288-apps]$ git checkout -b gp
+Switched to a new branch 'gp'
+[student@workstation DO288-apps]$ echo "TEST" > text.txt
+[student@workstation DO288-apps]$ git add .
+[student@workstation DO288-apps]$ git commit -am "Message1" 
+[gp 0d8684f] Message1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 text.txt
+[student@workstation DO288-apps]$ git push --set-upstream origin gp
+Gtk-Message: 01:05:46.208: Failed to load module "canberra-gtk-module"
+error: unable to read askpass response from '/usr/libexec/openssh/gnome-ssh-askpass'
+Username for 'https://github.com': qarabus
+Gtk-Message: 01:06:14.025: Failed to load module "canberra-gtk-module"
+error: unable to read askpass response from '/usr/libexec/openssh/gnome-ssh-askpass'
+Password for 'https://qarabus@github.com': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 293 bytes | 293.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'gp' on GitHub by visiting:
+remote:      https://github.com/qarabus/DO288-apps/pull/new/gp
+remote: 
+To https://github.com/qarabus/DO288-apps.git
+ * [new branch]      gp -> gp
+Branch 'gp' set up to track remote branch 'gp' from 'origin'.
+[student@workstation DO288-apps]$ echo "UPDate content" > text.txt 
+[student@workstation DO288-apps]$ git add . 
+[student@workstation DO288-apps]$ git commit -am "Messge 2"
+[gp 282a14e] Messge 2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[student@workstation DO288-apps]$ git push 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 287 bytes | 287.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/qarabus/DO288-apps.git
+   0d8684f..282a14e  gp -> gp
+[student@workstation DO288-apps]$ lab-configure 
+
+This script configures the connection parameters to access the OpenShift cluster for your lab scripts
+
+ · Enter the API Endpoint: https://api.na46.prod.nextcle.com:6443
+ · Enter the Username: avvcbh
+ · Enter the Password: 9eb2b3aa021341cfb2ce
+ · Enter the GitHub Account Name: qarabus
+ · Enter the Quay.io Account Name: gp_abdur_rab
+
+You entered:
+ · API Endpoint:			https://api.na46.prod.nextcle.com:6443
+ · Username:				avvcbh
+ · Password:				9eb2b3aa021341cfb2ce
+ · GitHub Account Name:			qarabus
+ · Quay.io Account Name:		gp_abdur_rab
+
+Generated config:
+ · API Endpoint:			https://api.na46.prod.nextcle.com:6443
+ · Wildcard Domain:			apps.na46.prod.nextcle.com
+ · Nexus Server Host:			nexus-common.apps.na46.prod.nextcle.com
+ · Username:				avvcbh
+ · Password:				9eb2b3aa021341cfb2ce
+ · GitHub Account Name:			qarabus
+ · Quay.io Account Name:		gp_abdur_rab
+
+Verifying your API Endpoint...
+
+Verifying your Nexus host...
+
+Verifying your OpenShift developer user credentials...
+
+Verifying your GitHub account name...
+
+Verifying your Quay.io account name...
+
+Verifying your cluster configuration...
+
+Saving your lab configuration file...
+
+Saving your Maven settings file...
+
+All fine, lab config saved. You can now proceed with your exercises.
+
+If you need to modify the configuration, rerun this script or directly modify the values in /usr/local/etc/ocp4.config.
+
+[student@workstation DO288-apps]$ lab docker-build start
+
+Checking prerequisites for GE: Deploying an Application to an OpenShift Cluster
+
+ Checking local clone of the applications repository:
+ · Folder '/home/student/DO288-apps' is a git repo.............  SUCCESS
+ · Git repo '/home/student/DO288-apps' has no pending changes..  SUCCESS
+ Verifying the OpenShift cluster is running:
+ · Log in on OpenShift.........................................  SUCCESS
+ · Check master node na46-96rsp-master-0 is ready..............  SUCCESS
+ · Check master node na46-96rsp-master-1 is ready..............  SUCCESS
+ · Check master node na46-96rsp-master-2 is ready..............  SUCCESS
+ · Check the internal registry is up and running...............  SUCCESS
+ Checking required artifacts:
+ · Project 'ubi-echo' exists in student's GitHub fork..........  SUCCESS
+ Checking for conflicts with existing OpenShift projects:
+ · Project 'avvcbh-docker-build' is absent.....................  SUCCESS
+
+Setting up the classroom for GE: Deploying an Application to an OpenShift Cluster
+
+ · Download exercise files.....................................  SUCCESS
+ · Download solution files.....................................  SUCCESS
+
+Overall start status...........................................  SUCCESS
+
+[student@workstation DO288-apps]$  cd DO288-apps
+bash: cd: DO288-apps: No such file or directory
+[student@workstation DO288-apps]$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+[student@workstation DO288-apps]$ git checkout -b docker-build
+Switched to a new branch 'docker-build'
+[student@workstation DO288-apps]$ git push -u origin docker-build
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/qarabus/DO288-apps.git
+   d3b6fa2..f355431  docker-build -> docker-build
+Branch 'docker-build' set up to track remote branch 'docker-build' from 'origin'.
+[student@workstation DO288-apps]$ cat ubi-echo/Dockerfile
+FROM registry.access.redhat.com/ubi8/ubi:8.0
+USER 1001
+CMD bash -c "while true; do echo test; sleep 5; done"
+[student@workstation DO288-apps]$ source /usr/local/etc/ocp4.config
+[student@workstation DO288-apps]$ oc login -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD} ${RHT_OCP4_MASTER_API}
+error: dial tcp: lookup api.na46.prod.nextcle.com on 172.25.250.254:53: read udp 172.25.250.9:37991->172.25.250.254:53: i/o timeout - verify you have provided the correct host and port and that the server is currently running.
+[student@workstation DO288-apps]$ oc login -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD} ${RHT_OCP4_MASTER_API}
+Login successful.
+
+You don't have any projects. You can try to create a new project, by running
+
+    oc new-project <projectname>
+
+[student@workstation DO288-apps]$ # please proceed now
+[student@workstation DO288-apps]$ oc new-project qarabusGP
+The ProjectRequest "qarabusGP" is invalid: metadata.name: Invalid value: "qarabusGP": a DNS-1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')
+[student@workstation DO288-apps]$ oc new-project qarabus_gp
+The ProjectRequest "qarabus_gp" is invalid: metadata.name: Invalid value: "qarabus_gp": a DNS-1123 label must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?')
+[student@workstation DO288-apps]$ oc new-project ${RHT_OCP4_DEV_USER}-docker-build
+Now using project "avvcbh-docker-build" on server "https://api.na46.prod.nextcle.com:6443".
+
+You can add applications to this project with the 'new-app' command. For example, try:
+
+    oc new-app rails-postgresql-example
+
+to build a new example application in Ruby. Or use kubectl to deploy a simple Kubernetes application:
+
+    kubectl create deployment hello-node --image=k8s.gcr.io/serve_hostname
+
+[student@workstation DO288-apps]$ oc new-app --name echo https://github.com/${RHT_OCP4_GITHUB_USER}/DO288-apps#docker-build 
+--context-dir uberror: No language matched the source repository
+[student@workstation DO288-apps]$ oc new-app --name echo https://github.com/${RHT_OCP4_GITHUB_USER}/DO288-apps#docker-build --context-dir ubi-echo 
+--> Found container image 11f9dba (2 years old) from registry.access.redhat.com for "registry.access.redhat.com/ubi8/ubi:8.0"
+
+    Red Hat Universal Base Image 8 
+    ------------------------------ 
+    The Universal Base Image is designed and engineered to be the base layer for all of your containerized applications, middleware and utilities. This base image is freely redistributable, but Red Hat only supports Red Hat technologies through subscriptions for Red Hat products. This image is maintained by Red Hat and updated regularly.
+
+    Tags: base rhel8
+
+    * An image stream tag will be created as "ubi:8.0" that will track the source image
+    * A Docker build using source code from https://github.com/qarabus/DO288-apps#docker-build will be created
+      * The resulting image will be pushed to image stream tag "echo:latest"
+      * Every time "ubi:8.0" changes a new build will be triggered
+
+--> Creating resources ...
+    imagestream.image.openshift.io "ubi" created
+    imagestream.image.openshift.io "echo" created
+    buildconfig.build.openshift.io "echo" created
+    deployment.apps "echo" created
+--> Success
+    Build scheduled, use 'oc logs -f buildconfig/echo' to track its progress.
+    Run 'oc status' to view your app.
+[student@workstation DO288-apps]$ 
+[student@workstation DO288-apps]$ 
+[student@workstation DO288-apps]$ 
+[student@workstation DO288-apps]$ oc project
+Using project "avvcbh-docker-build" on server "https://api.na46.prod.nextcle.com:6443".
+[student@workstation DO288-apps]$ oc projects
+You have one project on this server: "avvcbh-docker-build".
+
+Using project "avvcbh-docker-build" on server "https://api.na46.prod.nextcle.com:6443".
+[student@workstation DO288-apps]$ 
+
